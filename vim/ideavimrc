@@ -1,0 +1,51 @@
+" -----------------------------------------------------------------------------
+" Habit breakers
+" -----------------------------------------------------------------------------
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+" -----------------------------------------------------------------------------
+" appearance
+" -----------------------------------------------------------------------------
+
+syntax on
+colors elflord
+set background=dark     " Set to 'light' if you use a light background
+
+highlight Comment       ctermfg=DarkCyan
+highlight LineNr        ctermfg=DarkRed
+
+" Terminal Color Settings
+set t_Co=256
+
+:cwindow             " Open a quick fix window whenever there is something to put in it.
+
+set title
+set ruler            " Show location of cursor in status bar
+set showcmd          " Show multi-char cmds as you type; bottom right
+set number           " Show line numbers
+set scrolloff=2      " Cursors stays 2 lines below/above top/bottom
+set laststatus=2     " Always put a status line at the bottem of the window.
+
+" Status line includes git branch
+" set statusline=[%n]\ %<%.99f\ %h%w%y%r%m\ %{ETry('fugitive#statusline')}%#ErrorMsg#%*%=%-16(line\ %l\ of\ %L,\ col\ %c,\ %)%P
+
+set nolist
+set listchars=tab:»·,trail:·
+
+let loaded_matchparen = 1     " Don't load the match paren plugin.
+set noerrorbells              " No noise
+set visualbell                " Flash the screen
+set linebreak                 " Affects how wrapped text is displayed
+set nowrap                    " Turn off wrapping by default.
+set foldmethod=manual
+
+" Display current cursor position.  This simply makes it more verbose.
+nnoremap <c-g> 2<c-g>
+
+match todo /@@@/
+
+" Mappings
+imap jj <Esc> 

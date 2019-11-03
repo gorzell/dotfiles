@@ -1,0 +1,13 @@
+*~
+.DS_Store
+
+# Intellij
+*.iml
+.idea/
+out/
+
+# Gradle
+.gradle/
+
+# Vim
+*.swp

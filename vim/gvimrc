@@ -1,0 +1,3 @@
+set guifont=Source\ Code\ Pro\ Light:h16        " Font family and font size.
+set antialias     		                " MacVim: smooth fonts.
+set encoding=utf-8

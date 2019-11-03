@@ -1,0 +1,124 @@
+set nocompatible              " be iMproved, required
+
+" -----------------------------------------------------------------------------
+" Vundle
+" -----------------------------------------------------------------------------
+
+" Load Vundle if present.
+if filereadable($HOME . "/.vim/vundle.vim")
+    source $HOME/.vim/vundle.vim
+endif
+
+filetype plugin on
+
+" -----------------------------------------------------------------------------
+" Appearance
+" -----------------------------------------------------------------------------
+
+" Terminal Color Settings
+set t_Co=256
+
+syntax on
+
+colors elflord
+set background=dark     " Set to 'light' if you use a light background
+highlight Comment       ctermfg=DarkCyan
+highlight LineNr        ctermfg=DarkRed
+
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+set list
+
+" Airline Configuration
+let g:airline_powerline_fonts = 1
+let g:airline_theme='badwolf'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" Window Configuration
+set title
+set ruler            " Show location of cursor in status bar
+set showcmd          " Show multi-char cmds as you type; bottom right
+set number           " Show line numbers
+set scrolloff=2      " Cursors stays 2 lines below/above top/bottom
+set mouse=a
+set laststatus=2     " Always put a status line at the bottem of the window.
+
+set nolist
+set listchars=tab:»·,trail:·
+
+let loaded_matchparen = 1     " Don't load the match paren plugin.
+set noerrorbells              " No noise
+set visualbell                " Flash the screen
+set linebreak                 " Affects how wrapped text is displayed
+set nowrap                    " Turn off wrapping by default.
+set foldmethod=manual
+
+" -----------------------------------------------------------------------------
+" Splits 
+" -----------------------------------------------------------------------------
+" Default opening locations
+set splitbelow
+set splitright
+
+" Simplify navigation keys
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Remap new horizontial and vertical splits
+nnoremap <leader>- :sp<CR>
+nnoremap <leader>\| :vsp<CR>
+
+
+" Expand file serch to look in sub directories
+set path+=**
+
+" Display all matching files on tab completion
+set wildmenu
+
+match todo /@@@/
+
+" Custom file types
+autocmd BufNewFile,BufRead *.workflow set syntax=terraform
+
+" Enable spell check for selected file types.
+autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us
+autocmd BufRead,BufNewFile README setlocal spell spelllang=en_us
+set complete+=kspell
+
+" -----------------------------------------------------------------------------
+" Mappings
+" -----------------------------------------------------------------------------
+
+" Buffer Navigation
+nnoremap gb :bn<CR> " Shortcut for next buffer the aligns with the next tab shortcut.
+nnoremap gB :bp<CR> " Shortcut for previous buffer that aligns with the previous tab shortcut.
+
+" Splits Navigation.
+set splitright
+set splitbelow
+nnoremap <C-J> <C-W><C-J> " Navigate one up.
+nnoremap <C-K> <C-W><C-K> " Navigate one down.
+nnoremap <C-L> <C-W><C-L> " Navigate one right.
+nnoremap <C-H> <C-W><C-H> " Navigate one left.
+
+" Display current cursor position.  This simply makes it more verbose.
+nnoremap <c-g> 2<c-g>
+
+" Use jj in place of Esc to spare you pinky.
+imap jj <Esc>
+
+" -----------------------------------------------------------------------------
+" Habit Breakers
+" -----------------------------------------------------------------------------
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+" -----------------------------------------------------------------------------
+" Markdown
+" -----------------------------------------------------------------------------
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+let g:vim_markdown_folding_level = 2
