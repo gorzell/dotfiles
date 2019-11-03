@@ -2,6 +2,8 @@
 set -x LSCOLORS gxfxcxdxbxegedabagacad
 set -x PATH ~/.local/bin ~/bin /usr/local/bin $PATH
 set -x GNUPGHOME ~/encrypted/gpg-keychain
+set -x UID (id -u)
+set -x GID (id -g)
 
 ## VIM Mode Settings
 fish_vi_key_bindings
