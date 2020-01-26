@@ -26,7 +26,7 @@ case Linux
     # set -x JDK_18 ~/.asdf/installs/java/8.172
     # set -x JDK_19 /etc/alternatives/java_sdk_9
     set -x JDK_110 /etc/alternatives/java_sdk_10
-    set fish_function_path $fish_function_path "/usr/lib/python3/dist-packages/powerline/bindings/fish"
+    set fish_function_path $fish_function_path "/home/gorzell/.local/lib/python3.7/site-packages/powerline/bindings/fish"
     powerline-setup
     status --is-interactive; and source (rbenv init -|psub)
     alias pbcopy='xsel --clipboard --input'
