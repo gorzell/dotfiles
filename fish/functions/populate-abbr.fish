@@ -1,5 +1,4 @@
 function populate-abbr
-  # Git
   abbr g git
   abbr gs 'git status'
   abbr gd 'git diff'
@@ -13,7 +12,6 @@ function populate-abbr
   abbr gr 'git remote'
   abbr gb 'git branch'
   abbr ga 'git add'
-
-  # Docker
   abbr dc 'docker-compose'
+  abbr kssh 'kitty +kitten ssh'
 end
