@@ -12,7 +12,7 @@
 set $mod Mod4
 
 # Set font used to SourceCodePro because it is easy to read.
-font pango:Source Code Variable 10
+font pango:Source Code Variable 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -110,8 +110,6 @@ set $workspace4 "4:&#xf1c9;"
 assign [class="Code - Insiders"] $workspace4
 for_window [class="Code - Insiders"] border pixel 1
 
-set $workspace5 "5:"
-
 # Comms
 set $workspace6 "6:&#xf198;"
 assign [class="Slack"] $workspace6
@@ -120,15 +118,15 @@ for_window [class="Slack"] border pixel 1
 set $workspace7 "7:"
 set $workspace8 "8:"
 
-# Spotify
-set $workspace9 "9:&#xf1bc;"
-assign [class="Spotify"] $workspace10
-for_window [class="Spotify"] border pixel 1
-
 # 1Password
-set $workspace10 "10:&#xf023;"
+set $workspace9 "9:&#xf023;"
 assign [class="Chromium-browser"] $workspace9
 for_window [class="Chromium-browser"] border pixel 1
+
+# Spotify
+set $workspace10 "10:&#xf1bc;"
+assign [class="Spotify"] $workspace10
+for_window [class="Spotify"] border pixel 1
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -199,7 +197,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 # finds out, if available)
 bar {
 	position top
-        status_command bumblebee-status -m nic battery pulseaudio date time -p date.format="%d.%m.%Y" time.format="%H:%M" -t solarized-powerline
+        status_command bumblebee-status -m nic docker_ps battery pulseaudio date time -p date.format="%d.%m.%Y" time.format="%H:%M" -t solarized-powerline
 }
 
 exec /usr/libexec/gnome-settings-daemon
