@@ -12,3 +12,4 @@ bootstrap:
 .PHONY: install
 install:
 	dot link
+	vim +PluginInstall +qall
