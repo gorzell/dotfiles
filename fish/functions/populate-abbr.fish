@@ -12,6 +12,6 @@ function populate-abbr
   abbr gr 'git remote'
   abbr gb 'git branch'
   abbr ga 'git add'
-  abbr dc 'docker-compose'
+  abbr dcmp 'docker-compose'
   abbr kssh 'kitty +kitten ssh'
 end

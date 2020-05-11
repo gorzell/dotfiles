@@ -110,6 +110,9 @@ set $workspace4 "4:&#xf1c9;"
 assign [class="Code - Insiders"] $workspace4
 for_window [class="Code - Insiders"] border pixel 1
 
+# Random/Free
+set $workspace5 "5:&#xf120;"
+
 # Comms
 set $workspace6 "6:&#xf198;"
 assign [class="Slack"] $workspace6
@@ -192,6 +195,7 @@ bindsym XF86AudioRaiseVolume exec amixer set Master 7%+
 bindsym XF86AudioMicMute exec amixer set Capture toggle
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86Display exec "xrandr --output eDP1 --auto && xrandr --output DP2 --off && xrandr --output HDMI1 --off"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
