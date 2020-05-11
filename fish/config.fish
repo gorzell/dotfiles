@@ -23,18 +23,12 @@ case Linux
     set -x PATH ~/.cargo/bin $PATH
     set -x JAVA_HOME /usr/lib/jvm/zulu-12-amd64
     set -x JDK_18 /usr/lib/jvm/zulu-8-amd64
-    # set -x JDK_18 ~/.asdf/installs/java/8.172
-    # set -x JDK_19 /etc/alternatives/java_sdk_9
-    set -x JDK_110 /etc/alternatives/java_sdk_10
-    set fish_function_path $fish_function_path "/home/gorzell/.local/lib/python3.7/site-packages/powerline/bindings/fish"
+    set fish_function_path $fish_function_path "$HOME/.local/lib/python3.8/site-packages/powerline/bindings/fish"
     powerline-setup
     status --is-interactive; and source (rbenv init -|psub)
     alias pbcopy='xsel --clipboard --input'
     alias pbpaste='xsel --clipboard --output'
 end
-
-# Source git aliaes
-source ~/.config/fish/aliases/git-aliases.fish
 
 # Source this last becasue it sets HOMEs.
 source ~/.asdf/asdf.fish
