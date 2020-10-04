@@ -1,0 +1,18 @@
+add_newline = false
+
+[character]
+vicmd_symbol = "[❮](bold yellow)"
+
+[directory]
+truncate_length = 1
+truncate_to_repo = false
+fish_style_pwd_dir_length = 2
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+
+[line_break]
+disabled = true
+
+[rust]
+format = "[$symbol$version]($style) "
