@@ -1,6 +1,6 @@
 function brewup
   brew upgrade
-  brew cask upgrade
+  brew upgrade --cask
   brew cleanup
   mas upgrade
 end
