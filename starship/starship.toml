@@ -16,3 +16,9 @@ disabled = true
 
 [rust]
 format = "[$symbol$version]($style) "
+
+# Disabled
+[aws]
+disabled = true
+[cmd_duration]
+disabled = true
