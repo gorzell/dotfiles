@@ -1,8 +1,9 @@
 
 export PATH:=~/.local/bin:$(PATH)
 
+
 .PHONY: bootstrap
-bootstrap: install-dot install-git-repos install-powerline	
+bootstrap: install-dot install-git-repos
 
 .PHONY: install
 install:
@@ -23,7 +24,3 @@ install-git-repos:
 	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.8
 	git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-.PHONY: install-powerline
-install-powerline:
-	pip install --user powerline-status
