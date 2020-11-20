@@ -13,7 +13,7 @@ fi
 
 $apt update
 # Install tools for adding package repositories
-$apt install \
+$apt install -y --no-install-recommends \
     apt-transport-https \
     ca-certificates \
     curl \
