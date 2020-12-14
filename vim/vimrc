@@ -9,7 +9,7 @@ if filereadable($HOME . "/.vim/vundle.vim")
     source $HOME/.vim/vundle.vim
 endif
 
-filetype plugin on
+filetype plugin indent on
 
 " -----------------------------------------------------------------------------
 " Appearance
@@ -122,3 +122,20 @@ noremap <Right> <NOP>
 " -----------------------------------------------------------------------------
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
 let g:vim_markdown_folding_level = 2
+
+" -----------------------------------------------------------------------------
+" Rust 
+" -----------------------------------------------------------------------------
+let g:rustfmt_autosave = 1
+
+" -----------------------------------------------------------------------------
+" Syntastic
+" -----------------------------------------------------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
