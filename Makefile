@@ -8,7 +8,7 @@ bootstrap: install-dot install-git-repos
 .PHONY: install
 install:
 	~/.local/bin/dot link
-	vim +PluginInstall +qall
+	#vim +PluginInstall +qall
 
 .PHONY: install-dot
 install-dot:
