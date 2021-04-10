@@ -21,6 +21,6 @@ install-dot:
 
 .PHONY: install-git-repos
 install-git-repos:
-	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.8
-	git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+	#git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.8
+	#git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

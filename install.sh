@@ -27,8 +27,8 @@ curl -fsSL https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' 
 $sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]') $(lsb_release -cs) stable"
 
 # Add my Bintray apt repository
-$sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61
-echo "deb https://dl.bintray.com/chaos-systems/deb stable main" | $sudo tee /etc/apt/sources.list.d/chaossystems.list
+curl -fsSL https://apt.cha0s.dev/pub.gpg | (OUT=$($sudo apt-key add - 2>&1) || echo $OUT)
+echo "deb https://apt.cha0s.dev stable main" | $sudo tee -a /etc/apt/sources.list.d/chaos-dev.list \
 
 $apt update
 $apt install -y --no-install-recommends chaossystems-cli openssh-client
