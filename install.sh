@@ -33,6 +33,7 @@ echo "deb https://apt.cha0s.dev stable main" | $sudo tee -a /etc/apt/sources.lis
 $apt update
 $apt install -y --no-install-recommends chaossystems-cli openssh-client
 
-export DOT_DIR=$HOME/dotfiles
+# The repo could be cloned anywhere on the filesystem, so we need to look it up so that we link to the correct location.
+export DOT_DIR=$(dirname "$0")
 
 make bootstrap install
