@@ -34,6 +34,6 @@ $apt update
 $apt install -y --no-install-recommends chaossystems-cli openssh-client
 
 # The repo could be cloned anywhere on the filesystem, so we need to look it up so that we link to the correct location.
-export DOT_DIR=$(dirname "$0")
+export DOT_DIR=$(readlink -f $(dirname "$0"))
 
 make bootstrap install
