@@ -201,7 +201,7 @@ bindsym XF86Display exec "xrandr --output eDP1 --auto && xrandr --output DP2 --o
 # finds out, if available)
 bar {
 	position top
-        status_command bumblebee-status -m nic docker_ps battery pulseaudio date time -p date.format="%d.%m.%Y" time.format="%H:%M" -t solarized-powerline
+        status_command bumblebee-status -m nic docker_ps battery date time -p date.format="%d.%m.%Y" time.format="%H:%M" -t solarized-powerline
 }
 
 exec /usr/libexec/gnome-settings-daemon
