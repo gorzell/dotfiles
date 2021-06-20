@@ -1,12 +1,12 @@
 set nocompatible              " be iMproved, required
 
 " -----------------------------------------------------------------------------
-" Vundle
+" Vim Plug
 " -----------------------------------------------------------------------------
 
-" Load Vundle if present.
-if filereadable($HOME . "/.vim/vundle.vim")
-    source $HOME/.vim/vundle.vim
+" Load Plug if present.
+if filereadable($HOME . "/.vim/plug.vim")
+    source $HOME/.vim/plug.vim
 endif
 
 filetype plugin indent on

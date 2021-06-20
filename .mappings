@@ -10,7 +10,7 @@ fish = "~/.config/fish"
 "tmux/general.conf" = "~/.tmux/general.conf"
 "vim/vimrc" = "~/.vimrc"
 "vim/ideavimrc" = "~/.ideavimrc"
-"vundle/vundle.vim" = "~/.vim/vundle.vim"
+"vim-plug/plug.vim" = "~/.vim/plug.vim"
 
 [linux]
 "i3/config" = "~/.config/i3/config"
