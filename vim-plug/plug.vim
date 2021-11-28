@@ -15,7 +15,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'rust-lang/rust.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -29,7 +28,6 @@ Plug 'fatih/vim-hclfmt'
 Plug 'elzr/vim-json'
 Plug 'plasticboy/vim-markdown'
 Plug 'sheerun/vim-polyglot'
-Plug 'racer-rust/vim-racer'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'cespare/vim-toml'
@@ -37,12 +35,33 @@ Plug 'tpope/vim-unimpaired'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'stephpy/vim-yaml'
 
+" Vim only Plugins
+if has('vim')
+    Plug 'rust-lang/rust.vim'
+    " Plug 'racer-rust/vim-racer'
+endif
+
 " Neovim Plugins
 if has('nvim')
+    " Completion framework
+    Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/nvim-compe'
+    " LSP completion source for nvim-cmp
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    " Snippet completion source for nvim-cmp
+    Plug 'hrsh7th/cmp-vsnip'
+    " Other usefull completion sources
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-buffer'
+    " Snippet engine
+    Plug 'hrsh7th/vim-vsnip'
+    " Collection of common configurations for the Nvim LSP client
     Plug 'neovim/nvim-lspconfig'
+    " Fuzzy finder
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
+    " To enable more of the features of rust-analyzer, such as inlay hints and more!
+    Plug 'simrat39/rust-tools.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 endif
