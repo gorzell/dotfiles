@@ -204,6 +204,8 @@ bar {
         status_command bumblebee-status -m nic docker_ps battery date time -p date.format="%d.%m.%Y" time.format="%H:%M" -t solarized-powerline
 }
 
-exec /usr/libexec/gnome-settings-daemon
 exec xrdb -I$HOME ~/.Xresources
+# The gnome-settings-daemon command was removed/split into other commands.
+#exec --no-startup-id /usr/libexec/gnome-settings-daemon
+#exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
 exec_always feh --bg-center .wallpaper.jpg

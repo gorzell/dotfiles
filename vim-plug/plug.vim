@@ -43,6 +43,8 @@ endif
 
 " Neovim Plugins
 if has('nvim')
+    " Copilot
+    Plug 'github/copilot.vim'
     " Completion framework
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/nvim-compe'
