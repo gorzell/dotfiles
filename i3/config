@@ -11,6 +11,9 @@
 
 set $mod Mod4
 
+# Remap the CapsLock to Super
+exec setxkbmap -option caps:super
+
 # Set font used to SourceCodePro because it is easy to read.
 font pango:Source Code Variable 12
 
