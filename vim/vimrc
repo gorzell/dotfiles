@@ -104,13 +104,13 @@ nnoremap <C-L> <C-W><C-L> " Navigate one right.
 nnoremap <C-H> <C-W><C-H> " Navigate one left.
 
 " NERDTree
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <leader>n :NERDTreeToggle<CR>
 
 " Telescope
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <silent> <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <silent> <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <silent> <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <silent> <leader>fh <cmd>Telescope help_tags<cr>
 
 " Display current cursor position.  This simply makes it more verbose.
 nnoremap <c-g> 2<c-g>
@@ -139,7 +139,7 @@ let g:vim_markdown_folding_level = 2
 autocmd BufRead,BufNewFile *.adoc setlocal spell spelllang=en_us
 
 " -----------------------------------------------------------------------------
-" Rust 
+" Rust
 " -----------------------------------------------------------------------------
 let g:rustfmt_autosave = 1
 
@@ -154,3 +154,40 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" -----------------------------------------------------------------------------
+" LSP Bindings
+" -----------------------------------------------------------------------------
+
+" have a fixed column for the diagnostics to appear in
+" this removes the jitter when warnings/errors flow in
+set signcolumn=yes
+
+" Code navigation shortcuts
+nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
+
+
+" Diagnostics
+" Set updatetime for CursorHold
+" 300ms of no cursor movement to trigger CursorHold
+set updatetime=300
+" Show diagnostic popup on cursor hold
+autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
+
+" Goto previous/next diagnostic warning/error
+nnoremap <silent> g[ <cmd>lua vim.diagnostic.goto_prev()<CR>
+nnoremap <silent> g] <cmd>lua vim.diagnostic.goto_next()<CR>
+
+
+" Format on save
+autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)
+
