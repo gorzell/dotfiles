@@ -17,5 +17,5 @@ fish = "~/.config/fish"
 "i3/config" = "~/.config/i3/config"
 "tmux/linux.conf" = "~/.tmux/linux.conf"
 
-[macos]
+[darwin]
 "tmux/mac.conf" = "~/.tmux/mac.conf"
