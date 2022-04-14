@@ -1,4 +1,21 @@
 " -----------------------------------------------------------------------------
+" Theme
+" -----------------------------------------------------------------------------
+let g:tokyonight_style = "night"
+colorscheme tokyonight
+set termguicolors
+
+lua <<EOF
+require('nvim-web-devicons').setup{}
+require('bufferline').setup{}
+require('lualine').setup {
+  options = {
+    theme = 'tokyonight'
+  }
+}
+EOF
+
+" -----------------------------------------------------------------------------
 " Nvim completion
 " -----------------------------------------------------------------------------
 " Set completeopt to have a better completion experience
@@ -24,11 +41,11 @@ local opts = {
     tools = { -- rust-tools options
         autoSetHints = true,
         hover_with_actions = true,
-        inlay_hints = {
-            show_parameter_hints = false,
-            parameter_hints_prefix = "",
-            other_hints_prefix = "",
-        },
+        -- inlay_hints = {
+        --     show_parameter_hints = false,
+        --     parameter_hints_prefix = "",
+        --     other_hints_prefix = "",
+        -- },
     },
 
     -- all the opts to send to nvim-lspconfig
@@ -51,6 +68,7 @@ local opts = {
 }
 
 require('rust-tools').setup(opts)
+require("trouble").setup()
 EOF
 
 " Setup Completion
@@ -91,9 +109,9 @@ cmp.setup({
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['rust_analyzer'].setup {
-    capabilities = capabilities
-  }
+  --require('lspconfig')['rust_analyzer'].setup {
+  --  capabilities = capabilities
+  --}
 EOF
 
 " -----------------------------------------------------------------------------
@@ -116,6 +134,7 @@ nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
 
+nnoremap <silent> <leader>b :!cargo build<CR>
 
 " Diagnostics
 " Set updatetime for CursorHold

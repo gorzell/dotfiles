@@ -10,14 +10,13 @@ call plug#begin('~/.vim/plugged')
 
 " Vim Plugins
 Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-commentary'
 Plug 'chrisbra/csv.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-syntastic/syntastic'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
@@ -38,6 +37,8 @@ Plug 'stephpy/vim-yaml'
 " Vim only Plugins
 if has('vim')
     Plug 'rust-lang/rust.vim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
     " Plug 'racer-rust/vim-racer'
 endif
 
@@ -67,6 +68,17 @@ if has('nvim')
     Plug 'simrat39/rust-tools.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+    Plug 'folke/trouble.nvim'
+    " Themes and styling
+    Plug 'akinsho/bufferline.nvim'
+    Plug 'nvim-lualine/lualine.nvim'
+    Plug 'kyazdani42/nvim-web-devicons'
+    Plug 'Mofiqul/dracula.nvim'
+    Plug 'EdenEast/nightfox.nvim'
+    Plug 'navarasu/onedark.nvim'
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    Plug 'glepnir/zephyr-nvim'
+    Plug 'titanzero/zephyrium'
 endif
 
 " Initialize plugin system

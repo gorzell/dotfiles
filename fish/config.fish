@@ -1,6 +1,6 @@
 # Universal Settings
 set -x LSCOLORS gxfxcxdxbxegedabagacad
-set -x PATH ~/.local/bin ~/.rbenv/bin ~/bin /usr/local/bin $PATH
+set -x PATH ~/.local/bin ~/.cargo/bin ~/.rbenv/bin ~/bin /usr/local/bin $PATH
 set -x GNUPGHOME ~/.gnupg
 set -x UID (id -u)
 set -x GID (id -g)
@@ -12,8 +12,9 @@ bind -M insert -m default jj backward-char force-repaint
 # OS Specific Settings
 switch (uname)
 case Darwin
-    set -x JAVA_HOME /Library/Java/JavaVirtualMachines/openjdk-14.0.2.jdk/Contents/Home
+    set -x JAVA_HOME /Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home
     set -x XDG_CONFIG_HOME ~/.config
+    set -x PATH /opt/homebrew/bin $PATH
     if type -q rbenv
         status --is-interactive; and source (rbenv init -|psub)
     end
