@@ -1,14 +1,12 @@
 
 export PATH:=~/.local/bin:$(PATH)
 
-
 .PHONY: bootstrap
-bootstrap: install-dot install-git-repos
+bootstrap: install-dot
 
 .PHONY: install
 install:
 	~/.local/bin/dot link
-	#vim +PluginInstall +qall
 
 .PHONY: install-dot
 install-dot:
@@ -19,8 +17,3 @@ install-dot:
 	mv dot ~/.local/bin
 	rm -f dot.tar.gz
 
-.PHONY: install-git-repos
-install-git-repos:
-	#git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.8
-	#git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

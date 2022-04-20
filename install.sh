@@ -22,10 +22,6 @@ $apt install -y --no-install-recommends \
     software-properties-common
 
 
-# Add Docker apt repository
-curl -fsSL https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/gpg | (OUT=$($sudo apt-key add - 2>&1) || echo $OUT)
-$sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]') $(lsb_release -cs) stable"
-
 # Add my Bintray apt repository
 curl -fsSL https://apt.cha0s.dev/pub.gpg | (OUT=$($sudo apt-key add - 2>&1) || echo $OUT)
 echo "deb https://apt.cha0s.dev stable main" | $sudo tee -a /etc/apt/sources.list.d/chaos-dev.list \
