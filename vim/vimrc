@@ -121,7 +121,7 @@ noremap <Right> <NOP>
 " Markdown
 " -----------------------------------------------------------------------------
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
-let g:vim_markdown_folding_level = 2
+"let g:vim_markdown_folding_level = 2
 
 
 " -----------------------------------------------------------------------------
