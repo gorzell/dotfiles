@@ -4,28 +4,33 @@
 		"dockerfile": "Dockerfile.vscode",
 		"context": "."
 	},
-	"mounts": ["source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"],
-	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined", "--network=host" ],
-
-	// Set *default* container specific settings.json values on container create.
-	"settings": {
-		"terminal.integrated.shell.linux": "/bin/fish",
+	"runArgs": [
+		"--cap-add=SYS_PTRACE",
+		"--security-opt",
+		"seccomp=unconfined",
+		"--network=host",
+		"--init"
+	],
+	"features": {
+		"docker-in-docker": {
+			"version": "latest",
+			"moby": false,
+			"dockerDashComposeVersion": "v1"
+		},
+		"github-cli": "latest"
 	},
-
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
+		"bungcip.better-toml",
 		"ms-azuretools.vscode-docker",
 		"ms-vsliveshare.vsliveshare",
 		"mutantdino.resourcemonitor",
 		"visualstudioexptteam.vscodeintellicode",
 	],
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "rustc --version",
-
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "vscode"
 }

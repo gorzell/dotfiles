@@ -21,6 +21,9 @@ $apt install -y --no-install-recommends \
     gnupg-agent \
     software-properties-common
 
+if [[ $(lsb_release -is) == "Ubuntu" ]]; then
+    add-apt-repository ppa:neovim-ppa/unstable
+fi
 
 # Add my Bintray apt repository
 curl -fsSL https://apt.cha0s.dev/pub.gpg | (OUT=$($sudo apt-key add - 2>&1) || echo $OUT)
