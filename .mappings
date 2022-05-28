@@ -15,6 +15,7 @@ fish = "~/.config/fish"
 
 [linux]
 "i3/config" = "~/.config/i3/config"
+"kitty/xterm-kitty" = "~/.terminfo/x/xterm-kitty"
 "tmux/linux.conf" = "~/.tmux/linux.conf"
 
 [darwin]
