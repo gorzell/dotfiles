@@ -94,5 +94,6 @@ let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_in_insert_mode = 0
 
 " NERDTree
-nnoremap <silent> <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <leader>N :NERDTreeToggle<CR>
 

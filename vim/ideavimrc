@@ -1,23 +1,16 @@
+set commentary
 set NERDTree
 
-set noerrorbells              " No noise
-set visualbell                " Flash the screen
-set linebreak                 " Affects how wrapped text is displayed
-set nowrap                    " Turn off wrapping by default.
-set foldmethod=manual
+source ~/.vimrc
+source ~/.vim/plug.vim
 
-" Display current cursor position.  This simply makes it more verbose.
-nnoremap <c-g> 2<c-g>
-
-" Mappings
-imap jj <Esc>
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <leader>N :NERDTreeToggle<CR>
-
-" -----------------------------------------------------------------------------
-" Habit breakers
-" -----------------------------------------------------------------------------
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+" Intellij
+noremap ga :action ShowIntentionActions<CR>
+noremap gd :action GotoDeclaration<CR>
+noremap gD :action GotoImplementation<CR>
+noremap <leader>ff :action GotoFile<CR>
+noremap <leader>fs :action GotoSymbol<CR>
+noremap <leader>fg :action SearchEverywhere<CR>
+noremap <leader>fc :action GotoClass<CR>
+noremap g[ :action GotoPreviousError<CR>
+noremap g] :action GotoNextError<CR>

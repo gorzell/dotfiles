@@ -125,13 +125,16 @@ set signcolumn=yes
 " Code navigation shortcuts
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+" nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> gD    <cmd>Telescope lsp_implementations<CR>
 nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
 nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
+" nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+nnoremap <silent> gW    <cmd>Telescope lsp_dynamic_workspace_symbols<CR>
+" nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gd    <cmd>Telescope lsp_definitions<CR>
 nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
 
 nnoremap <silent> <leader>b :!cargo build<CR>
@@ -155,5 +158,6 @@ autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)
 nnoremap <silent> <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <silent> <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <silent> <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <silent> <leader>fs <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
 nnoremap <silent> <leader>fh <cmd>Telescope help_tags<cr>
 
