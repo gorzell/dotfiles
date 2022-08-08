@@ -8,6 +8,7 @@ source ~/.vim/plug.vim
 noremap ga :action ShowIntentionActions<CR>
 noremap gd :action GotoDeclaration<CR>
 noremap gD :action GotoImplementation<CR>
+noremap gr :action FindUsages<CR>
 noremap <leader>ff :action GotoFile<CR>
 noremap <leader>fs :action GotoSymbol<CR>
 noremap <leader>fg :action SearchEverywhere<CR>
