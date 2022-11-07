@@ -22,7 +22,7 @@ $apt install -y --no-install-recommends \
     software-properties-common
 
 if [[ $(lsb_release -is) == "Ubuntu" ]]; then
-    add-apt-repository ppa:neovim-ppa/unstable
+    $sudo add-apt-repository -y ppa:neovim-ppa/unstable
 fi
 
 # Add my Bintray apt repository
