@@ -1,6 +1,7 @@
 # Universal Settings
 set -x LSCOLORS gxfxcxdxbxegedabagacad
-set -x PATH ~/.local/bin ~/.cargo/bin ~/.rbenv/bin ~/bin /usr/local/bin $PATH
+set -x PATH ~/.local/bin ~/.cargo/bin ~/.rbenv/bin ~/bin /usr/local/cuda/bin /usr/local/bin $PATH
+set -x LD_LIBRARY_PATH /usr/local/cuda/lib64 $LD_LIBRARY_PATH
 set -x GNUPGHOME ~/.gnupg
 set -x UID (id -u)
 set -x GID (id -g)
