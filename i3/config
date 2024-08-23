@@ -15,7 +15,7 @@ set $mod Mod4
 exec setxkbmap -option caps:super
 
 # Set font used to SourceCodePro because it is easy to read.
-font pango:Source Code Variable 12
+font pango:FiraMono Nerd Font 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -93,44 +93,44 @@ bindsym $mod+y focus parent
 #bindsym $mod+d focus child
 
 # workspace configuration
-set $workspace1 "1:&#xf120;"
+set $workspace1 "1:&#xf120; "
 
 # Firefox
-set $workspace2 "2:&#xf269;"
+set $workspace2 "2:&#xf269; "
 assign [class="Firefox"] $workspace2
 for_window [class="Firefox"] border pixel 1
 
 # Intellij
-set $workspace3 "3:&#xf121;"
+set $workspace3 "3:&#xf121; "
 assign [class="jetbrains-idea"] $workspace3
 for_window [class="jetbrains-idea"] border pixel 1
 assign [class="jetbrains-idea-ce"] $workspace3
 for_window [class="jetbrains-idea-ce"] border pixel 1
 
 # VS Code
-set $workspace4 "4:&#xf1c9;"
+set $workspace4 "4:&#xf1c9; "
 #set $workspace4 "4:&#xf3ca;"
 assign [class="Code - Insiders"] $workspace4
 for_window [class="Code - Insiders"] border pixel 1
 
 # Random/Free
-set $workspace5 "5:&#xf120;"
+set $workspace5 "5:&#xf120; "
 
 # Comms
-set $workspace6 "6:&#xf198;"
+set $workspace6 "6:&#xf198; "
 assign [class="Slack"] $workspace6
 for_window [class="Slack"] border pixel 1
 
-set $workspace7 "7:"
-set $workspace8 "8:"
+set $workspace7 "7: "
+set $workspace8 "8: "
 
 # 1Password
-set $workspace9 "9:&#xf023;"
+set $workspace9 "9:&#xf023; "
 assign [class="Chromium-browser"] $workspace9
 for_window [class="Chromium-browser"] border pixel 1
 
 # Spotify
-set $workspace10 "10:&#xf1bc;"
+set $workspace10 "10:&#xf1bc; "
 assign [class="Spotify"] $workspace10
 for_window [class="Spotify"] border pixel 1
 
@@ -204,7 +204,7 @@ bindsym XF86Display exec "xrandr --output eDP1 --auto && xrandr --output DP2 --o
 # finds out, if available)
 bar {
 	position top
-        status_command bumblebee-status -m nic battery date time -p date.format="%d.%m.%Y" time.format="%H:%M" -t solarized-powerline
+        status_command bumblebee-status -m cpu load memory nic battery pulseout date time -p date.format="%d.%m.%Y" time.format="%H:%M" -t solarized-powerline
 }
 
 exec xrdb -I$HOME ~/.Xresources
