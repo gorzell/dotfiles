@@ -19,6 +19,7 @@ case Darwin
         status --is-interactive; and source (rbenv init -|psub)
     end
     starship init fish | source
+    direnv hook fish | source
 case Linux
     set -x PATH ~/.cargo/bin $PATH
     set -x JAVA_HOME /usr/lib/jvm/zulu-14-amd64

@@ -37,6 +37,7 @@
       "shift-n": "search::SelectPrevMatch",
       "space t": "workspace::NewCenterTerminal",
       "g b": "editor::ToggleComments",
+      "g d": "editor::GoToDeclaration",
       "+ +": "workspace::Save",
       "space c": "pane::CloseActiveItem"
     }

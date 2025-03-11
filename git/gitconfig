@@ -2,14 +2,40 @@
 	name = Greg Orzell
 	email = gorzell@github.com
 	signingkey = 7BEA6E83CB190379
+
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = nvim
-[push]
-	default = simple
-[gpg]
-	program = gpg2
+
 [color]
 	ui = auto
+[column]
+    ui = auto
+
+[init]
+    defaultBranch = main
+[branch]
+    sort = -committerdate
+[tag]
+    sort = version:refname
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+[push]
+    default = simple
+    autoSetupRemote = true
+    followTags = true
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
 [pull]
 	rebase = false
+
+[gpg]
+	program = gpg2
+
+[url "git@github.com:"]
+	insteadOf = https://github.com
