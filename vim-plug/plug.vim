@@ -46,7 +46,7 @@ endif
 if has('nvim')
     " Copilot
     " TODO: This has a conflict with the Tab key mapping.
-    "Plug 'github/copilot.vim'
+    Plug 'github/copilot.vim'
     " Completion framework
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/nvim-compe'
