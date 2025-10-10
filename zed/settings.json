@@ -7,6 +7,14 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "agent": {
+    "model_parameters": [],
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4.1"
+    },
+    "version": "2"
+  },
   "theme": "Tokyo Night Light",
   "telemetry": {
     "diagnostics": false,
@@ -32,5 +40,8 @@
         }
       }
     }
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
   }
 }
