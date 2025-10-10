@@ -1,0 +1,4 @@
+theme = TokyoNight Night
+font-family = FiraMono Nerd Font
+font-size = 14
+shell-integration-features = title,ssh-env,ssh-terminfo
