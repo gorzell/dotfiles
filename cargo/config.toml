@@ -5,3 +5,6 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/mold"]
 #[target.aarch64-apple-darwin]
 #linker = "clang"
 #rustflags = ["-C", "link-arg=-fuse-ld=mold"]
+
+[build]
+rustc-wrapper = "/opt/homebrew/bin/sccache"

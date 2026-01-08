@@ -11,14 +11,13 @@
     "model_parameters": [],
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4"
+      "model": "gemini-3-pro-preview",
     },
-    "version": "2"
   },
   "theme": "Tokyo Night Light",
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "base_keymap": "JetBrains",
   "vim_mode": true,
@@ -30,15 +29,26 @@
   "format_on_save": "on",
   "file_types": {
     "TOML": ["Cargo.lock"],
-    "Dockerfile": ["Dockerfile*"]
+    "Dockerfile": ["Dockerfile*"],
   },
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
         "check": {
-          "command": "clippy" // rust-analyzer.check.command (default: "check")
-        }
-      }
-    }
-  }
+          "command": "clippy", // rust-analyzer.check.command (default: "check")
+        },
+      },
+    },
+  },
+  "languages": {
+    "Python": {
+      "language_servers": [
+        // Enable ty, and otherwise
+        // use the default configuration.
+        "ty",
+        "!basedpyright",
+        "...",
+      ],
+    },
+  },
 }
