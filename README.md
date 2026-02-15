@@ -10,7 +10,7 @@ This applies links from `.mappings` using chezmoi.
 
 ## Optional external repositories
 
-To include additional mapping repositories (for example `config` and `agents`), set URLs in `/home/runner/work/dotfiles/dotfiles/.chezmoidata.toml`:
+To include additional mapping repositories (for example `config` and `agents`), set URLs in `.chezmoidata.toml`:
 
 ```toml
 [externalRepos.config]

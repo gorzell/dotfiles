@@ -10,5 +10,5 @@ install:
 
 .PHONY: install-chezmoi
 install-chezmoi:
-	sh -c "$$(curl -fsLS get.chezmoi.io)" -- -b ~/.local/bin
 	mkdir -p ~/.local/bin
+	sh -c "$$(curl -fsLS get.chezmoi.io)" -- -b ~/.local/bin
