@@ -7,6 +7,9 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "edit_predictions": {
+    "provider": "copilot"
+  },
   "agent_servers": {
     "github-copilot": {
       "type": "registry"
@@ -19,9 +22,6 @@
       "provider": "copilot_chat",
       "model": "claude-opus-4.5"
     },
-  },
-  "features": {
-    "edit_prediction_provider": "copilot",
   },
   "theme": "Tokyo Night Light",
   "telemetry": {
