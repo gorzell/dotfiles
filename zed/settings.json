@@ -7,14 +7,15 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "disable_ai": false,
   "agent": {
+    "enable_feedback": false,
     "default_profile": "ask",
     "model_parameters": [],
     "default_model": {
       "provider": "copilot_chat",
       "model": "gemini-3-pro-preview"
     },
-    "version": "2"
   },
   "features": {
     "edit_prediction_provider": "copilot",
