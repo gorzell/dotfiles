@@ -8,19 +8,25 @@
 // from the command palette or from `Zed` application menu.
 {
   "disable_ai": false,
+  "use_system_window_tabs": true,
+  "edit_predictions": {
+    "provider": "copilot"
+  },
+  "agent_servers": {
+    "github-copilot": {
+      "type": "registry"
+    }
+  },
   "agent": {
     "enable_feedback": false,
     "default_profile": "ask",
     "model_parameters": [],
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gemini-3-pro-preview"
+      "model": "claude-opus-4.6-fast"
     },
   },
-  "features": {
-    "edit_prediction_provider": "copilot",
-  },
-  "theme": "Tokyo Night Light",
+  "theme": "Dracula Light (Alucard)",
   "telemetry": {
     "diagnostics": false,
     "metrics": false,
