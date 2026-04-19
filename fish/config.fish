@@ -5,8 +5,6 @@ set -x LD_LIBRARY_PATH /usr/local/cuda/lib64 $LD_LIBRARY_PATH
 set -x GNUPGHOME ~/.gnupg
 set -x UID (id -u)
 set -x GID (id -g)
-set -x ANTHROPIC_AUTH_TOKEN (/opt/homebrew/bin/op read op://Private/gh-pat-agents/password)
-set -x ANTHROPIC_BASE_URL https://api.githubcopilot.com
 
 ## VIM Mode Settings
 fish_vi_key_bindings
