@@ -2,18 +2,13 @@
 export PATH:=~/.local/bin:$(PATH)
 
 .PHONY: bootstrap
-bootstrap: install-dot
+bootstrap: install-chezmoi
 
 .PHONY: install
 install:
-	~/.local/bin/dot link
+	~/.local/bin/chezmoi apply --source "$(CURDIR)"
 
-.PHONY: install-dot
-install-dot:
-	curl -Lso dot.tar.gz https://github.com/ubnt-intrepid/dot/releases/download/v0.1.4/dot-v0.1.4-x86_64-unknown-linux-gnu.tar.gz
-	tar zxvf dot.tar.gz
-	chmod +x dot
+.PHONY: install-chezmoi
+install-chezmoi:
 	mkdir -p ~/.local/bin
-	mv dot ~/.local/bin
-	rm -f dot.tar.gz
-
+	sh -c "$$(curl -fsLS get.chezmoi.io)" -- -b ~/.local/bin

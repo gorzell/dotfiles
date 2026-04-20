@@ -1,0 +1,12 @@
+{{- if .externalRepos.config.url }}
+["externals/config"]
+    type = "git-repo"
+    url = "{{ .externalRepos.config.url }}"
+    refreshPeriod = "168h"
+{{- end }}
+{{- if .externalRepos.agents.url }}
+["externals/agents"]
+    type = "git-repo"
+    url = "{{ .externalRepos.agents.url }}"
+    refreshPeriod = "168h"
+{{- end }}
