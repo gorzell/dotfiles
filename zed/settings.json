@@ -13,6 +13,9 @@
     "provider": "copilot"
   },
   "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    },
     "github-copilot": {
       "type": "registry"
     }
