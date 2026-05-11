@@ -22,4 +22,4 @@ SETUVAR _fish_abbr_gr:git\x20remote
 SETUVAR _fish_abbr_gs:git\x20status
 SETUVAR _fish_abbr_kssh:kitty\x20\x2bkitten\x20ssh
 SETUVAR fish_greeting:Welcome\x20to\x20fish\x2c\x20the\x20friendly\x20interactive\x20shell
-SETUVAR fish_user_paths:/Users/gorzell/\x2emodular/pkg/packages\x2emodular\x2ecom_mojo/bin\x1e/Applications/Ghostty\x2eapp/Contents/MacOS
+SETUVAR fish_user_paths:/Users/gorzell/\x2elmstudio/bin\x1e/Users/gorzell/\x2emodular/pkg/packages\x2emodular\x2ecom_mojo/bin\x1e/Applications/Ghostty\x2eapp/Contents/MacOS
