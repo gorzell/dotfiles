@@ -1,0 +1,47 @@
+#!/bin/sh
+
+set -eu
+
+source_dir="{{ .chezmoi.sourceDir }}"
+os_name="{{ .chezmoi.os }}"
+
+link_from_mappings() {
+	mappings_file="$1"
+	if [ ! -f "$mappings_file" ]; then
+		return
+	fi
+
+	section=""
+	while IFS= read -r line; do
+		case "$line" in
+			\[*\])
+				section="${line#\[}"
+				section="${section%\]}"
+				continue
+				;;
+			\"*\"*"="*"\"~/"*)
+				src=$(printf '%s\n' "$line" | sed -E 's/^"([^"]+)".*/\1/')
+				dst=$(printf '%s\n' "$line" | sed -E 's/^"[^"]+"[[:space:]]*=[[:space:]]*"([^"]+)".*/\1/')
+				;;
+			*)
+				continue
+				;;
+		esac
+
+		if [ "$section" != "general" ] && [ "$section" != "$os_name" ]; then
+			continue
+		fi
+
+		src_path="$source_dir/$src"
+		case "$dst" in
+			"~/"*) dst_path="$HOME/${dst#\~/}" ;;
+			*) dst_path="$dst" ;;
+		esac
+		mkdir -p "$(dirname "$dst_path")"
+		ln -snf "$src_path" "$dst_path"
+	done < "$mappings_file"
+}
+
+link_from_mappings "$source_dir/.mappings"
+link_from_mappings "$source_dir/externals/config/.mappings"
+link_from_mappings "$source_dir/externals/agents/.mappings"
