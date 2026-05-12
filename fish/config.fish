@@ -38,6 +38,9 @@ if test -d ~/.asdf
     source ~/.asdf/asdf.fish
 end
 
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+
 # Added by LM Studio CLI (lms)
 set -gx PATH $PATH /Users/gorzell/.lmstudio/bin
 # End of LM Studio CLI section
