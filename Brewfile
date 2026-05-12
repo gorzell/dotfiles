@@ -25,10 +25,12 @@ brew "wget"
 
 # Casks
 tap "homebrew/cask"
+tap "manaflow-ai/cmux"
 cask "1password"
 cask "alfred"
 cask "caffeine"
 cask "calibre"
+cask "cmux"
 cask "docker"
 cask "firefox"
 cask "google-chrome"
